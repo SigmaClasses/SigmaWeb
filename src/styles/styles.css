@@ -1,0 +1,239 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Start:  Variable Section */
+:root {
+  /* --theme-color: purple; */
+  --appHeaderBGColor: #21232b;
+  --appFooterBackToTopBGColor: #373c47;
+  --appFooterBGColor: #282c34;
+  --appFooterCopyRightsBGColor: #21232b;
+  --appFooterTextColor: #d9d9d9;
+  --appLogoTextColor: #f7941d;
+  --appLogoTagLineColor: #bf1e2e;
+  --appMenuBGColor: rgba(233, 233, 233);
+}
+
+body {
+  margin: 0;
+}
+/* End:  Variable Section */
+
+/* Default */
+
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  padding: 3px !important;
+  /* border: 1px solid red; */
+}
+
+.row {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+ul {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.col-md-11,
+.col-md-10,
+.col-md-9,
+.col-md-8,
+.col-md-7,
+.col-md-6,
+.col-md-5,
+.col-md-4,
+.col-md-3,
+.col-md-2,
+.col-md-1 {
+  padding: 0px !important;
+}
+
+.pd0 {
+  padding: 0px !important;
+}
+
+.pdTop1rem {
+  padding-top: 1rem !important;
+}
+
+.pdBottom1rem {
+  padding-bottom: 1rem !important;
+}
+
+.pdLeft1rem {
+  padding-left: 1rem !important;
+}
+
+.pdRight1rem {
+  padding-right: 1rem !important;
+}
+
+.pdTopBottom1rem {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin-bottom: 0.5rem !important;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* Start:  App Component Section */
+
+/* End:  App Component Section  */
+/*##################################################################################################################################  */
+
+/* Start:  App Header Page Section */
+
+.AppHeader {
+  background-color: var(--appHeaderBGColor);
+  padding: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.AppAssistanceDiv {
+  color: var(--appFooterTextColor);
+  text-align: right;
+  padding-right: 0.5rem;
+  font-size: 13px;
+}
+
+.AppLogoDiv {
+  text-align: center;
+}
+
+.AppLogo {
+  width: 25%;
+}
+
+.AppSignInDiv {
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+.AppSignInDiv a {
+  color: var(--appLogoTextColor);
+}
+
+.AppSignInDiv a:hover {
+  color: var(--appLogoTextColor);
+  text-decoration: underline !important;
+}
+
+/* End:  App Header Page Section  */
+/*##################################################################################################################################  */
+
+/* Start:  App Footer Page Section */
+
+.AppFooter {
+  font-size: 15px;
+  background-color: var(--appFooterBGColor);
+  color: var(--appFooterTextColor);
+  padding: 1.5rem 0rem 1.5rem 0rem; /* top left bottom right*/
+}
+
+.AppFooter p {
+  font-size: 17px;
+  /* text-decoration: underline; */
+  font-weight: bold;
+}
+
+.AppFooter ul {
+  list-style: none;
+}
+
+.AppFooter ul li a {
+  color: var(--appFooterTextColor) !important;
+}
+.AppFooter ul li a:hover {
+  text-decoration: underline !important;
+}
+
+.AppFooterCopyRights,
+.AppFooterBackToTop {
+  background-color: var(--appFooterCopyRightsBGColor);
+  color: var(--appFooterTextColor);
+  font-size: 13px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.AppFooterCopyRights > span,
+.AppFooterBackToTop > .BackToTopDiv {
+  width: 100%;
+  text-align: center;
+}
+
+.AppFooterBackToTop span {
+  cursor: pointer;
+}
+
+.AppFooterBackToTop {
+  background-color: var(--appFooterBackToTopBGColor);
+}
+
+/* End:  App Footer Page Section  */
+/*##################################################################################################################################  */
+
+/* Start:  App Menu Section */
+
+.AppMenu {
+  background-color: var(--appMenuBGColor);
+}
+
+.AppMenuContent {
+  text-align: center;
+}
+
+.AppMenuContent ul {
+  list-style: none;
+  display: inline-flex;
+}
+
+.AppMenuContent ul li {
+  text-align: center;
+}
+
+.AppMenuContent ul li a {
+  color: var(--appHeaderBGColor) !important;
+  display: inline-block;
+  padding: 0.5rem 0rem 0.5rem 0rem;
+  border-bottom: 2px solid var(--appMenuBGColor);
+  align-items: center;
+  width: 8rem;
+}
+
+.AppMenuContent ul li a:hover {
+  border-bottom: 2px solid var(--appLogoTextColor);
+  font-weight: 700;
+}
+
+/* End:  App Menu Section  */
+/*##################################################################################################################################  */
