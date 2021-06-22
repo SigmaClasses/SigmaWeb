@@ -8,17 +8,24 @@ import { AppComponent } from './app.component';
 import  {AppHeaderComponent} from './components/appHeader.component';
 import  {AppFooterComponent} from './components/appFooter.component';
 import  {AppMenuComponent} from './components/appMenu.component';
-import {HomeComponent} from './components/home.Component'
+import {HomeComponent} from './components/home.Component';
+import {ImageSliderComponent} from './components/imageSlider/imageSlider.component';
+
+
+// External Modules
+ 
+import { SlickCarouselModule } from 'ngx-slick-carousel'; 
+ 
 
 @NgModule({
   declarations: [
     AppComponent,
     AppHeaderComponent, AppFooterComponent, AppMenuComponent,
-    HomeComponent
+    HomeComponent, ImageSliderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -27,11 +27,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles/styles.css",
+              "src/styles/sigmaStyles.css",
+              "src/styles/slickCarousel.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/bootstrap-icons/font/bootstrap-icons.css"
+              "./node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "./node_modules/slick-carousel/slick/slick.scss",  
+              "./node_modules/slick-carousel/slick/slick-theme.scss" 
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",  
+              "./node_modules/slick-carousel/slick/slick.min.js",
+              "src/js/util.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -84,25 +91,7 @@
             "browserTarget": "sigma-web:build"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles/styles.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/bootstrap-icons/font/bootstrap-icons.css"
-            ],
-            "scripts": []
-          }
-        },
+        
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {}

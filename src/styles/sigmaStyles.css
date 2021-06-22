@@ -11,6 +11,8 @@
   --appLogoTextColor: #f7941d;
   --appLogoTagLineColor: #bf1e2e;
   --appMenuBGColor: rgba(233, 233, 233);
+  --appMenuActiveBGColor: rgb(207, 207, 207);
+  --contentHeadingColor: gray;
 }
 
 body {
@@ -47,6 +49,18 @@ a {
 ul {
   padding: 0 !important;
   margin: 0 !important;
+}
+
+.ulText{
+  text-decoration: underline;
+}
+
+.fw200{
+font-weight: 200 !important;
+}
+
+.boldText{
+  font-weight: bold;
 }
 
 .col-md-11,
@@ -105,6 +119,13 @@ p {
   flex: 1;
 }
 
+
+.ContentHeading{
+ color: var(--contentHeadingColor);
+ font-weight: 600;
+ text-align: center;
+}
+
 /* Start:  App Component Section */
 
 /* End:  App Component Section  */
@@ -124,12 +145,10 @@ p {
   font-size: 13px;
 }
 
-.AppLogoDiv {
-  text-align: center;
-}
-
-.AppLogo {
+.AppLogoDiv .AppLogo {
   width: 25%;
+  display: block;
+  margin: 0 auto 0 auto;
 }
 
 .AppSignInDiv {
@@ -155,7 +174,7 @@ p {
   font-size: 15px;
   background-color: var(--appFooterBGColor);
   color: var(--appFooterTextColor);
-  padding: 1.5rem 0rem 1.5rem 0rem; /* top left bottom right*/
+  padding: 2.5rem 0rem 2.5rem 0rem; /* top left bottom right*/
 }
 
 .AppFooter p {
@@ -180,7 +199,7 @@ p {
   background-color: var(--appFooterCopyRightsBGColor);
   color: var(--appFooterTextColor);
   font-size: 13px;
-  height: 40px;
+  height: 50px;
   display: flex;
   align-items: center;
 }
@@ -214,26 +233,105 @@ p {
 
 .AppMenuContent ul {
   list-style: none;
-  display: inline-flex;
+  /* display: inline-flex; */
 }
 
 .AppMenuContent ul li {
   text-align: center;
+  display: inline;
 }
 
 .AppMenuContent ul li a {
   color: var(--appHeaderBGColor) !important;
   display: inline-block;
   padding: 0.5rem 0rem 0.5rem 0rem;
-  border-bottom: 2px solid var(--appMenuBGColor);
+  /* border-bottom: 2px solid var(--appMenuBGColor); */
   align-items: center;
   width: 8rem;
+  font-size: 18px;
+  font-weight: 200;
 }
 
 .AppMenuContent ul li a:hover {
-  border-bottom: 2px solid var(--appLogoTextColor);
-  font-weight: 700;
+  /* border-bottom: 2px solid var(--appLogoTextColor); */
+
+  background-color: var(--appMenuActiveBGColor);
+  /* font-weight: 700; */
+}
+
+
+.StickAppMenu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-right: auto;
+  z-index: 115003;
+  padding-top: 0rem !important;
+  /* border-bottom: none; */
 }
 
 /* End:  App Menu Section  */
 /*##################################################################################################################################  */
+
+
+
+
+/* Start:  App Page Content Section - Home Page  */
+
+.AppPageContentContainer {
+}
+
+
+.ResultSection{
+
+}
+
+.ResultCard{
+border-radius: 10px;
+border:1px solid lightgrey;
+display: inline-block;
+padding: 1rem 2rem 1rem 2rem;
+text-align: center justify;
+}
+
+.StudentImageContainer{
+ 
+
+}
+
+.StudentImage{
+
+}
+
+.CourseImage{
+  position:absolute;
+  top:195px; 
+  /*  same as the image size of student */
+  width: 186px !important;
+  height:40px  !important;
+  border-bottom-right-radius: 25px;
+  z-index: 111154;
+
+}
+
+.AnnouncementContainer, 
+.NewsAndEventContainer{
+
+  height: 400px;
+  padding: 2rem;
+  border:1px solid lightgrey;
+  border-radius: 10px;
+}
+
+
+.HomePageAboutUsCard{
+  height: 400px;
+  padding: 2rem !important;  
+  border:1px solid lightgrey;
+}
+
+/* End:  App Page Content Section - Home Page   */
+/*##################################################################################################################################  */
+
+
+

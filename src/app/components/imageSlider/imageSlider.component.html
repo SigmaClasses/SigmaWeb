@@ -1,0 +1,26 @@
+<section>
+  <ngx-slick-carousel #SM class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let slide of slideImages" class="slide">
+
+      <div [ngSwitch]="sliderFor">
+        <section *ngSwitchCase="sliderFor_HomePageMainSlider">
+          <img src="{{slide.image}}" width="100%">
+        </section>
+
+        <section class="ResultCard" *ngSwitchCase="sliderFor_HomePageResultSlider">
+          <div class="StudentImageContainer">
+            <img class="StudentImage" src="{{slide.image}}" width="100%">
+            <img class="CourseImage" src="{{neetImage}}" width="100%">
+          </div>
+
+          <h4> Student Name</h4>
+          <h4> #RANK</h4>
+          <h5> School, Place</h5>
+        </section>
+
+      </div>
+
+    </div>
+  </ngx-slick-carousel>
+
+</section>
