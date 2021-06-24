@@ -12,19 +12,27 @@
   --appLogoTagLineColor: #bf1e2e;
   --appMenuBGColor: rgba(233, 233, 233);
   --appMenuActiveBGColor: rgb(207, 207, 207);
-  --contentHeadingColor: gray;
+  /* --contentHeadingColor: gray; */
+  --contentHeadingColor: #335aa2;
+  --contentHeadingColor: #0b4e92;
+  --contentTextColor: #282c34;
+
+  --commonBorderColor: lightgrey;
 }
 
 body {
   margin: 0;
+  font-family: -"Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
 /* End:  Variable Section */
 
 /* Default */
 
 :host {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -"Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
   font-size: 14px;
   color: #333;
   box-sizing: border-box;
@@ -35,6 +43,22 @@ body {
 .container {
   padding: 3px !important;
   /* border: 1px solid red; */
+}
+
+.content-width {
+  width: 90% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-width-override {
+  background: hotpink;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: fit-content;
+
+  z-index: -1;
 }
 
 .row {
@@ -51,15 +75,23 @@ ul {
   margin: 0 !important;
 }
 
-.ulText{
+.ulText {
   text-decoration: underline;
 }
 
-.fw200{
-font-weight: 200 !important;
+.fw200 {
+  font-weight: 200 !important;
 }
 
-.boldText{
+.fw350 {
+  font-weight: 350 !important;
+}
+
+.fw300 {
+  font-weight: 300 !important;
+}
+
+.boldText {
   font-weight: bold;
 }
 
@@ -119,11 +151,22 @@ p {
   flex: 1;
 }
 
+.ContentHeading {
+  color: var(--contentHeadingColor);
+  font-weight: 600;
+}
 
-.ContentHeading{
- color: var(--contentHeadingColor);
- font-weight: 600;
- text-align: center;
+.ContentText {
+  color: var(--contentTextColor);
+  font-size: 21px;
+}
+
+.TextCenter {
+  text-align: center !important;
+}
+
+.TextJustify {
+  text-align: justify !important;
 }
 
 /* Start:  App Component Section */
@@ -224,7 +267,8 @@ p {
 /* Start:  App Menu Section */
 
 .AppMenu {
-  background-color: var(--appMenuBGColor);
+  /* background-color: var(--appMenuBGColor); */
+  background-color: var(--appFooterBGColor);
 }
 
 .AppMenuContent {
@@ -242,10 +286,9 @@ p {
 }
 
 .AppMenuContent ul li a {
-  color: var(--appHeaderBGColor) !important;
+  color: white;
   display: inline-block;
   padding: 0.5rem 0rem 0.5rem 0rem;
-  /* border-bottom: 2px solid var(--appMenuBGColor); */
   align-items: center;
   width: 8rem;
   font-size: 18px;
@@ -253,12 +296,14 @@ p {
 }
 
 .AppMenuContent ul li a:hover {
-  /* border-bottom: 2px solid var(--appLogoTextColor); */
-
-  background-color: var(--appMenuActiveBGColor);
-  /* font-weight: 700; */
+  background-color: var(--appHeaderBGColor);
+  background-color: var(--appFooterBackToTopBGColor);
 }
 
+.AppMenuLinkActive {
+  background-color: var(--appHeaderBGColor);
+  background-color: var(--appFooterBackToTopBGColor);
+}
 
 .StickAppMenu {
   position: fixed;
@@ -273,65 +318,93 @@ p {
 /* End:  App Menu Section  */
 /*##################################################################################################################################  */
 
-
-
-
 /* Start:  App Page Content Section - Home Page  */
 
 .AppPageContentContainer {
 }
 
-
-.ResultSection{
-
+.ResultSection {
+  /* border: 1px solid red; */
 }
 
-.ResultCard{
-border-radius: 10px;
-border:1px solid lightgrey;
-display: inline-block;
-padding: 1rem 2rem 1rem 2rem;
-text-align: center justify;
+.ResultCard {
+  border-radius: 10px;
+  border: 1px solid var(--commonBorderColor);
+  display: inline-block;
+  padding: 1rem 2rem 1rem 2rem;
+  text-align: center justify;
 }
 
-.StudentImageContainer{
- 
-
+.StudentImageContainer {
+  overflow: hidden;
+  display: inline-block;
 }
 
-.StudentImage{
+.StudentImage {
+  z-index: 1;
 
+  border: 1px solid var(--contentHeadingColor);
+  border-bottom: none;
+  border-top-left-radius: 25px;
 }
 
-.CourseImage{
-  position:absolute;
-  top:195px; 
+.CourseName {
+  /* position: absolute; */
+  /* top: 195px; */
   /*  same as the image size of student */
-  width: 186px !important;
-  height:40px  !important;
-  border-bottom-right-radius: 25px;
-  z-index: 111154;
 
+  height: 40px !important;
+  border: 1px solid var(--contentHeadingColor);
+  border-bottom-right-radius: 25px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  /*margin-top: -40px !important; */
+  z-index: 9999 !important;
+  background-color: var(--contentHeadingColor);
 }
 
-.AnnouncementContainer, 
-.NewsAndEventContainer{
-
+.AnnouncementContainer,
+.NewsAndEventContainer {
   height: 400px;
   padding: 2rem;
-  border:1px solid lightgrey;
+  border: 1px solid var(--commonBorderColor);
   border-radius: 10px;
 }
 
+.HomePageAboutUsCard {
+  /* height: 400px; */
+  padding: 2rem !important;
+  padding-bottom: 0rem !important;
+}
 
-.HomePageAboutUsCard{
-  height: 400px;
-  padding: 2rem !important;  
-  border:1px solid lightgrey;
+.HomePageAboutUsCard:first-child {
+  padding-left: 0 !important;
+}
+
+.HomePageAboutUsCard:last-child {
+  padding-right: 0 !important;
+}
+
+.HomePageAboutUsCard h4 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  border-top: 1px solid var(--commonBorderColor);
 }
 
 /* End:  App Page Content Section - Home Page   */
 /*##################################################################################################################################  */
 
+/*Media Query*/
 
+@media screen and (min-width: 740px) {
+  .content-width {
+    width: 90% !important;
+  }
+}
 
+@media screen and (min-width: 1340px) {
+  .content-width {
+    max-width: 1260px !important;
+  }
+}

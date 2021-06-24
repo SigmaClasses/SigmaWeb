@@ -1,5 +1,9 @@
 /* Start: Home Page Image Slider   */
 
+:root {
+  --contentHeadingColor: #0b4e92;
+}
+
 .slick-slider {
   width: 100%;
   margin: auto;
@@ -23,45 +27,58 @@
   border-radius: 25px;
 }
 
-
-
 /* Result Section style */
 
+.ResultSection {
+  overflow: hidden;
+}
 .ResultSection .slick-slider {
-  width: 100%;
-  height: 400px ;
+  width: 93%;
+  height: 400px;
   margin: auto;
-   border: none;
+  border: none;
 }
 
-
-.ResultSection .slick-slide { 
-
+.ResultSection .slick-slide {
   /* border: 1px solid blue; */
   padding: 1rem;
   max-height: 400px;
   text-align: center;
 }
 
-
-.ResultSection .slick-slide img { 
-
-  border:1px solid #203864;
- 
-  width: 190px;
-  height:200px;
+.ResultSection .slick-slide img {
+  width: 170px;
+  height: 180px;
   margin: auto;
-  border-bottom-right-radius: 25px;
 }
-
 
 .ResultSection .slick-prev,
 .ResultSection .slick-next {
   display: block !important;
-  background-color: black;
+  /* background-color: black; */
+  font-size: 1.5rem !important;
+  /* height: 100% !important;
+  width: 100% !important; */
 }
 
+.ResultSection .slick-prev {
+  left: -45px !important;
+}
 
+.ResultSection .slick-prev::before {
+  font-size: 40px !important;
+  color: var(--contentHeadingColor) !important;
+  opacity: 1 !important;
+}
+
+/* .ResultSection .slick-next {
+  right: -25px !important;
+} */
+.ResultSection .slick-next::before {
+  font-size: 40px !important;
+  color: var(--contentHeadingColor) !important;
+  opacity: 1 !important;
+}
 
 /* End:  Home Page Image Slider   */
 /*##################################################################################################################################  */

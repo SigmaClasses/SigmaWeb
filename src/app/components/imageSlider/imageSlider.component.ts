@@ -61,11 +61,11 @@ export class ImageSliderComponent implements OnInit, AfterViewInit {
         break;
 
       case this.sliderFor_HomePageResultSlider:
-        imageFeeds = this.prepareImagePathObject(this.homePageResultImagesPath, 4, 'studentName');
+        imageFeeds = this.prepareImagePathObject(this.homePageResultImagesPath, 6, 'studentName');
 
         // changing the config values to show more images
         this.slideConfig.slidesToShow = 4;
-        this.slideConfig.slidesToScroll = 1;
+        this.slideConfig.slidesToScroll = 2;
         break;
 
 
