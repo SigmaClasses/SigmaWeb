@@ -1,26 +1,33 @@
+ 
+import { HomeComponent } from '../../app/components/layoutComponents/home.Component'; 
+import { AdmissionComponent } from '../../app/components/appComponents/admission.component';
+import { ManagementComponent } from '../../app/components/appComponents/management.component';
+import { ResultsComponent } from '../../app/components/appComponents/results.component';
+
 export const routeConfig =[
 
+     
     { 
-        routeLink: '',
+        routeLink: 'Home',
         routeLinkText:'Home',
-        routeComponent:''
+        routeComponent: HomeComponent
     },
 
     { 
-        routeLink: '',
+        routeLink: 'Admission',
         routeLinkText:'Admission',
-        routeComponent:''
+        routeComponent: AdmissionComponent
     },
 
     { 
-        routeLink: '',
+        routeLink: 'Results',
         routeLinkText:'Results',
-        routeComponent:''
+        routeComponent:ResultsComponent
     },
 
     { 
-        routeLink: '',
+        routeLink: 'Management',
         routeLinkText:'Management',
-        routeComponent:''
-    }
+        routeComponent:ManagementComponent
+    } 
 ]

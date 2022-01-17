@@ -4,7 +4,7 @@
         <div class="AppMenuContent">
                 <ul>
                     <li *ngFor="let _routeConfigData of routeConfigData">
-                   <a href="#" >  {{_routeConfigData.routeLinkText}}  </a> 
+                   <a routerLink={{_routeConfigData.routeLink}} >  {{_routeConfigData.routeLinkText}}  </a> 
                     </li>
                 </ul>
         </div>

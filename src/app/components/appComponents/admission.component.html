@@ -1,0 +1,22 @@
+<h1> Application Form</h1>
+
+<h4> Fill Online  Or   Download and Fill Offline</h4>
+
+<form [formGroup]="admissionForm" class="form-control col-md-12" (ngSubmit)="onFormSubmit()">
+
+    <div class="form-row"> 
+        <label for="name"  class="col-md-3"> Name </label> 
+        <input id="name" type="text" formControlName='sName' class="col-md-4">
+         
+        <div *ngIf="admissionForm.controls['sName'].invalid && (admissionForm.controls['sName'].dirty || admissionForm.controls['sName'].touched)" class="alert alert-danger">
+            <div *ngIf="admissionForm.controls['sName'].invalid">
+            Please enter username
+          </div>
+        </div>
+    </div>
+
+    
+    <br/> <br/>
+
+    <button type="submit" [disabled]="!admissionForm.valid">Submit</button>
+</form>
