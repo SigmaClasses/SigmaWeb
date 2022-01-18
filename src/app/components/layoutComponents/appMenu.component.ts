@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import {routeConfig} from '../../../assets/appConstants/routeConstant';
+import {routeConfig} from '../../shared/appConstants/route.constant';
 
 @Component({
 

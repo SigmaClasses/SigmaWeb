@@ -1,22 +1,44 @@
-<h1> Application Form</h1>
 
-<h4> Fill Online  Or   Download and Fill Offline</h4>
+<div class="AppPageContentContainer"> 
 
-<form [formGroup]="admissionForm" class="form-control col-md-12" (ngSubmit)="onFormSubmit()">
+    
+<div *ngIf="!isOnline"> 
+<h2> Please select your preferred mode for application:</h2>
 
-    <div class="form-row"> 
-        <label for="name"  class="col-md-3"> Name </label> 
-        <input id="name" type="text" formControlName='sName' class="col-md-4">
-         
-        <div *ngIf="admissionForm.controls['sName'].invalid && (admissionForm.controls['sName'].dirty || admissionForm.controls['sName'].touched)" class="alert alert-danger">
-            <div *ngIf="admissionForm.controls['sName'].invalid">
-            Please enter username
+ 
+<input type="radio" id="onlineMode" value="OnlineMode" name="formMode" (click)="isOnline=!isOnline">
+  <label for="onlineMode">Fill Online</label><br>
+<input type="radio" id="offlineMode" value="OfflineMode" name="formMode" (click)="downloadForm()">
+  <label for="offlineMode">Download and Fill Offline</label> 
+
+</div>
+
+
+<div *ngIf="isOnline"> 
+ 
+<div class="TextCenter"> <h2> Application Form</h2> </div>
+<form [formGroup]="aForm" class="form-control col-md-12" (ngSubmit)="onFormSubmit()">
+
+ 
+
+
+      <div class="formContainer row" *ngFor="let question of questions"> 
+        <label  class="col-md-4 formLabel" [attr.for]="question.key" > {{question.labelName}}
+            <span *ngIf="question.isRequired" class="formRequiredIcon">*</span>  </label> 
+        <input  class="col-md-4 formControl" [id]="question.key" [type]="question.controlType" [formControlName]='question.key'>
+        <div  class="col-md-4 formControl-alertContainer"  *ngIf="aForm.controls[question.key].invalid && (aForm.controls[question.key].dirty || aForm.controls[question.key].touched)">
+            <div class="alert-danger formControl formControl-alert" *ngIf="aForm.controls[question.key].invalid">
+            Input filed is required.
           </div>
-        </div>
-    </div>
-
+        </div>  
+         
+    </div>  
     
     <br/> <br/>
 
-    <button type="submit" [disabled]="!admissionForm.valid">Submit</button>
-</form>
+    <button type="submit" [disabled]="!aForm.valid">Submit</button>
+</form> 
+
+</div>
+
+</div>

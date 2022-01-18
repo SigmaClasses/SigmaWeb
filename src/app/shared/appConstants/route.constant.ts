@@ -1,8 +1,8 @@
  
-import { HomeComponent } from '../../app/components/layoutComponents/home.Component'; 
-import { AdmissionComponent } from '../../app/components/appComponents/admission.component';
-import { ManagementComponent } from '../../app/components/appComponents/management.component';
-import { ResultsComponent } from '../../app/components/appComponents/results.component';
+import { HomeComponent } from '../../components/layoutComponents/home.Component'; 
+import { AdmissionComponent } from '../../components/appComponents/admission.component';
+import { ManagementComponent } from '../../components/appComponents/management.component';
+import { ResultsComponent } from '../../components/appComponents/results.component';
 
 export const routeConfig =[
 

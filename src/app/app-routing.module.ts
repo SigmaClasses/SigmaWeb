@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';  
-import {routeConfig} from  '../assets/appConstants/routeConstant';
+import {routeConfig} from  './shared/appConstants/route.constant';
 import { PageNotFoundComponent } from '../app/components/layoutComponents/pageNotFound.component';
 
 // const routes: Routes = [
