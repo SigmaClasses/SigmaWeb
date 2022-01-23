@@ -1,44 +1,117 @@
 
 <div class="AppPageContentContainer"> 
 
-    
-<div *ngIf="!isOnline"> 
-<h2> Please select your preferred mode for application:</h2>
+      
+    <div *ngIf="!isOnline"> 
+      <h2> Please select your preferred mode for application:</h2>
 
+      
+      <input type="radio" id="onlineMode" value="OnlineMode" name="formMode" (click)="isOnline=!isOnline">
+        <label for="onlineMode">Fill Online</label><br>
+      <input type="radio" id="offlineMode" value="OfflineMode" name="formMode" (click)="downloadForm()">
+        <label for="offlineMode">Download and Fill Offline</label> 
+
+    </div>
+
+
+  <div *ngIf="isOnline"> 
+  
+    <div class="TextCenter"> <h2> Application Form</h2> </div>
+    <form [formGroup]="aForm" class="form-control col-md-12 formContainer" (ngSubmit)="onFormSubmit()">
+
+      <div class="formInfo-div"> 
+        <strong>Information:  </strong> 
+
+        <ul>
+          <li> Field(s) having <span class="formRequiredIcon">*</span> is required. </li>
+          <li> If you are not certain what to fill in the any of the below field(s) then, please fill 'TBD'. </li>
+        </ul> 
+      </div>  
+
+     <br>
+          <div class="formControlContainer col-md-12 row"  *ngFor="let question of questions;let _i=index;"> 
+         
+            <div class="formLabel-div col-md-3"> 
+              <label  [attr.for]="question.key" > {{question.labelName}}
+                <span *ngIf="question.isRequired" class="formRequiredIcon">*</span>
+              </label> 
+            </div> 
+            <div [ngSwitch]="question.controlName" class="col-md-5"> 
  
-<input type="radio" id="onlineMode" value="OnlineMode" name="formMode" (click)="isOnline=!isOnline">
-  <label for="onlineMode">Fill Online</label><br>
-<input type="radio" id="offlineMode" value="OfflineMode" name="formMode" (click)="downloadForm()">
-  <label for="offlineMode">Download and Fill Offline</label> 
+                <div [ngSwitch]="question.controlType" *ngSwitchCase="controlType.TB" > 
 
+                  <input *ngSwitchCase="controlType.TB_T"  class="formControl-tb-t" [id]="question.key" [type]="question.controlType" [formControlName]='question.key' /> 
+                  
+                  <div *ngSwitchCase="controlType.TB_R"> 
+                    <input   class="formControl-tb-r" [id]="question.key" [type]="question.controlType" [formControlName]='question.key' /> 
+                  </div>
+                 
+                  <input *ngSwitchCase="controlType.TB_C"  class="formControl-tb-c" [id]="question.key" [type]="question.controlType" [formControlName]='question.key' /> 
+                  
+                </div>
+                <div *ngSwitchCase="controlType.TA" >  
+                  <textarea  class="formControl-ta" [id]="question.key"   [formControlName]='question.key'> </textarea>
+                </div>
+                <div *ngSwitchCase="controlType.DD" >  
+                  <select  class="formControl-dd" [id]="question.key"   [formControlName]='question.key'> 
+                    <option value="" selected> --Select-- </option> 
+                    <option value="A"> A </option> 
+                    <option value="B"> B </option> 
+                  </select>
+                </div>
+
+                <!-- Common Error message div -->
+                <div   *ngIf="aForm.controls[question.key].invalid && (aForm.controls[question.key].dirty || aForm.controls[question.key].touched)">
+                  <div class="formControl-alert" *ngIf="aForm.controls[question.key].invalid">
+                  Input filed is required.
+                  
+                </div>
+              </div> 
+
+
+
+            </div>
+          
+          
+        </div>  
+        
+        <br/> <br/>
+         <div style="text-align: center;"> 
+         <button class="btn btn-primary formButton" type="submit" [disabled]="!aForm.valid">Submit</button>
+         </div>
+         <br><br>
+    </form> 
+
+  </div>
 </div>
 
 
-<div *ngIf="isOnline"> 
- 
-<div class="TextCenter"> <h2> Application Form</h2> </div>
-<form [formGroup]="aForm" class="form-control col-md-12" (ngSubmit)="onFormSubmit()">
-
- 
 
 
-      <div class="formContainer row" *ngFor="let question of questions"> 
-        <label  class="col-md-4 formLabel" [attr.for]="question.key" > {{question.labelName}}
+  <!-- <div class="col-md-5"> 
+          <label  class="formLabel" [attr.for]="question.key" > {{question.labelName}}
             <span *ngIf="question.isRequired" class="formRequiredIcon">*</span>  </label> 
-        <input  class="col-md-4 formControl" [id]="question.key" [type]="question.controlType" [formControlName]='question.key'>
-        <div  class="col-md-4 formControl-alertContainer"  *ngIf="aForm.controls[question.key].invalid && (aForm.controls[question.key].dirty || aForm.controls[question.key].touched)">
+          <input  class="formControl" [id]="question.key" [type]="question.controlType" [formControlName]='question.key'>
+          <div  class="formControl-alertContainer"  *ngIf="aForm.controls[question.key].invalid && (aForm.controls[question.key].dirty || aForm.controls[question.key].touched)">
             <div class="alert-danger formControl formControl-alert" *ngIf="aForm.controls[question.key].invalid">
             Input filed is required.
-          </div>
-        </div>  
-         
-    </div>  
-    
-    <br/> <br/>
+            </div>
+          </div>  
+        </div> 
+          -->
 
-    <button type="submit" [disabled]="!aForm.valid">Submit</button>
-</form> 
 
-</div>
 
-</div>
+          
+        <!-- <mat-form-field class="col-md-5" appearance="fill">
+          <mat-label   [attr.for]="question.key" > {{question.labelName}} 
+            <span *ngIf="question.isRequired" class="formRequiredIcon">*</span>  
+          </mat-label> 
+          <input   [id]="question.key" [type]="question.controlType" [formControlName]='question.key' matInput  >
+          <mat-error *ngIf="aForm.controls[question.key].hasError('required') && question.isRequired">
+            {{question.labelName}}  is <strong>required</strong>
+          </mat-error>
+        </mat-form-field> -->
+
+
+

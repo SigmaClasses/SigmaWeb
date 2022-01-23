@@ -16,8 +16,8 @@ export class QuestionBaseService {
 
             new ApplicationFormQuestions({
                 key: nameof<IStudent>(s=> s.sCourses),
-                labelName:formHeaderConfig.header_sSubjectAndCourse, 
-                controlName: formControlConfig.controlTextBox,
+                labelName:formHeaderConfig.header_sCourse, 
+                controlName: formControlConfig.controlDropDown,
                 controlType: formControlConfig.controlType_Text,
                 validations: [],
                 displayOrder: this.i++ 
@@ -25,8 +25,8 @@ export class QuestionBaseService {
             }),
             new ApplicationFormQuestions({
                 key: nameof<IStudent>(s=> s.sSubjects),
-                labelName:formHeaderConfig.header_sSubjectAndCourse, 
-                controlName: formControlConfig.controlTextBox,
+                labelName:formHeaderConfig.header_sSubject, 
+                controlName: formControlConfig.controlDropDown,
                 controlType: formControlConfig.controlType_Text,
                 validations: [],
                 displayOrder: this.i++  
@@ -87,15 +87,17 @@ export class QuestionBaseService {
                 controlType: '',
                 validations: [],
                 displayOrder: this.i++  
-            })  ,
-            new ApplicationFormQuestions({
-                key: nameof<IStudent>(s=> s.sPresentPinCode),
-                labelName:formHeaderConfig.header_presentAddress, 
-                controlName: formControlConfig.controlTextBox,
-                controlType: formControlConfig.controlType_Text,
-                validations: [],
-                displayOrder: this.i++  
-            }) ,
+            }) 
+            //  ,
+            // new ApplicationFormQuestions({
+            //     key: nameof<IStudent>(s=> s.sPresentPinCode),
+            //     labelName:formHeaderConfig.header_presentAddress, 
+            //     controlName: formControlConfig.controlTextBox,
+            //     controlType: formControlConfig.controlType_Text,
+            //     validations: [],
+            //     displayOrder: this.i++  
+            // }) 
+            ,
             new ApplicationFormQuestions({
                 key: nameof<IStudent>(s=> s.sPermanentAddress),
                 labelName:formHeaderConfig.header_permanentAddress, 
@@ -104,14 +106,14 @@ export class QuestionBaseService {
                 validations: [],
                 displayOrder: this.i++  
             })  ,
-            new ApplicationFormQuestions({
-                key: nameof<IStudent>(s=> s.sPermanentPinCode),
-                labelName:formHeaderConfig.header_permanentAddress, 
-                controlName: formControlConfig.controlTextBox,
-                controlType: formControlConfig.controlType_Text,
-                validations: [],
-                displayOrder: this.i++  
-            }) ,
+            // new ApplicationFormQuestions({
+            //     key: nameof<IStudent>(s=> s.sPermanentPinCode),
+            //     labelName:formHeaderConfig.header_permanentAddress, 
+            //     controlName: formControlConfig.controlTextBox,
+            //     controlType: formControlConfig.controlType_Text,
+            //     validations: [],
+            //     displayOrder: this.i++  
+            // }) ,
             new ApplicationFormQuestions({
                 key: nameof<IStudent>(s=> s.sEmail),
                 labelName:formHeaderConfig.header_email, 
@@ -130,7 +132,7 @@ export class QuestionBaseService {
             }) ,
             new ApplicationFormQuestions({
                 key: nameof<IStudent>(s=> s.sParentOccupation),
-                labelName:formHeaderConfig.header_parentsDetails, 
+                labelName:formHeaderConfig.header_parentsOccupation, 
                 controlName: formControlConfig.controlTextBox,
                 controlType: formControlConfig.controlType_Text,
                 validations: [],
@@ -138,7 +140,7 @@ export class QuestionBaseService {
             }) ,
             new ApplicationFormQuestions({
                 key: nameof<IStudent>(s=> s.sParentContactNumber),
-                labelName:formHeaderConfig.header_parentsDetails, 
+                labelName:formHeaderConfig.header_parentsMobileNumber, 
                 controlName: formControlConfig.controlTextBox,
                 controlType: formControlConfig.controlType_Text,
                 validations: [],
@@ -146,7 +148,7 @@ export class QuestionBaseService {
             }) ,
             new ApplicationFormQuestions({
                 key: nameof<IStudent>(s=> s.sParentEmail),
-                labelName:formHeaderConfig.header_parentsDetails, 
+                labelName:formHeaderConfig.header_parentsEmailID, 
                 controlName: formControlConfig.controlTextBox,
                 controlType: formControlConfig.controlType_Text,
                 validations: [],

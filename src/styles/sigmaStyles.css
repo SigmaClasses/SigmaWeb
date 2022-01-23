@@ -16,7 +16,7 @@
   --contentHeadingColor: #335aa2;
   --contentHeadingColor: #0b4e92;
   --contentTextColor: #282c34;
-
+  --alertColor: red;
   --commonBorderColor: lightgrey;
 }
 
@@ -291,7 +291,7 @@ p {
   padding: 0.5rem 0rem 0.5rem 0rem;
   align-items: center;
   width: 8rem;
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: 200;
 }
 
@@ -398,23 +398,56 @@ p {
 /*##################################################################################################################################  */
 
 /* Form Page */
+/* [ngClass]="_i%2===0? 'formEvenField' : 'formOddField'" */
+.formEvenField {
+  background-color: rgb(238, 238, 238);
+  background-color: white;
+}
+
+.formOddField {
+  background-color: rgb(219, 217, 217);
+  background-color: white;
+}
+
+.formInfo-div {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(219, 217, 217);
+}
+
+.formInfo-div > ul {
+  margin-left: 2rem !important;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+input.ng-touched.ng-invalid {
+  border: 1px solid red !important;
+}
 
 .formContainer {
-  padding: 1rem 0.5rem 1rem 0.5rem !important; /* top left bottom right*/
+  background-color: rgb(248, 248, 248) !important;
+  box-shadow: 1px 1px 4px 1px rgb(184, 184, 184);
 }
 
-.formLabel {
-  font-size: 1.2rem;
-  font-weight: 400;
+.formControlContainer {
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem !important; /* top left bottom right*/
 }
 
-.formControl {
+.formLabel-div {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.formControl-tb-t,
+.formControl-tb-c,
+.formControl-ta,
+.formControl-dd {
   display: block;
   width: 100%;
   padding: 0.375rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 400;
-  line-height: 1.5;
   color: #212529;
   background-color: #fff;
   background-clip: padding-box;
@@ -424,35 +457,56 @@ p {
   appearance: none;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  height: 45px;
+  height: 2.8rem;
 }
+
+/* for radio button */
+.formControl-tb-r {
+}
+
+/* for calendar button */
+.formControl-tb-c {
+}
+
+.formControl-ta {
+  height: 7rem;
+}
+
 @keyframes alert-Animation {
   0% {
-    width: 0%;
-    color: transparent;
-    font-size: 0.1rem;
+    margin-top: -1rem;
   }
 
   100% {
-    width: 100%;
+    margin-top: 0rem;
   }
 }
 
 .formRequiredIcon {
-  color: red;
+  color: var(--alertColor);
   font-size: 1.2rem;
   font-weight: 400;
 }
 
-.formControl-alertContainer {
+/* .formControl-alertContainer {
   overflow: hidden !important;
-}
+} */
 .formControl-alert {
-  height: 45px;
+  color: var(--alertColor);
+  width: 100%;
   font-size: 1rem;
   border: none !important;
   animation-name: alert-Animation;
   animation-duration: 1s;
+}
+
+.formButton {
+  font-size: 1.1rem;
+  padding: 0.5rem 5rem 0.5rem 5rem !important;
+  background-clip: padding-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 /*##################################################################################################################################  */

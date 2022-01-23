@@ -19,7 +19,8 @@ import {ImageSliderComponent} from './components/imageSlider/imageSlider.compone
 import { AdmissionComponent } from './components/appComponents/admission.component';
 import { ManagementComponent } from './components/appComponents/management.component';
 import { ResultsComponent } from './components/appComponents/results.component';
-
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
 
  
 
@@ -31,7 +32,8 @@ import { ResultsComponent } from './components/appComponents/results.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, SlickCarouselModule, ReactiveFormsModule
+    AppRoutingModule, SlickCarouselModule, ReactiveFormsModule, NoopAnimationsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

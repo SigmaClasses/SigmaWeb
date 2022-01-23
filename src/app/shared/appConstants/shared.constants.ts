@@ -9,7 +9,7 @@ export const formControlConfig ={
     controlType_CheckBox : 'checkbox',
     controlType_Radio : 'radio',
     controlType_File : 'file',
-    controlType_Calender : 'Calender',
+    controlType_Calender : 'date',
 
 }
 
@@ -19,19 +19,22 @@ export const formControlConfig ={
 export const formHeaderConfig= {
 
     header_studentName: "Student Name",
-    header_sSubjectAndCourse:"Name of the subject and course applied for",
-    header_dob:"Date of Birth (DD/MM/YY)",
+    header_sSubject:"Select the subject(s)",
+    header_sCourse:"Select the applying course name",
+    header_dob:"Date of Birth",
     header_fatherName:"Father's Name",
     header_motherName:"Mother's Name",
     header_schoolName:"School Name",
     header_Religion:"Religion",
     header_isAPST:"APST or Non-APST",
-    header_presentAddress:"Present Address",
-    header_permanentAddress:"Permanent Address",
+    header_presentAddress:"Present Address with PinCode",
+    header_permanentAddress:"Permanent Address with PinCode",
     header_pinCode:"Pin Code",
     header_email:"E-mail Address",
     header_studentContactNumber:"Student Mobile Number",
-    header_parentsDetails:"Parent's or Guardian occupation, Mobile Number and/or email ID",
+    header_parentsOccupation:"Parent's or Guardian Occupation",
+    header_parentsMobileNumber:"Parent's or Guardian Mobile Number",
+    header_parentsEmailID:"Parent's or Guardian Email ID",
     header_examinationPercentage:"Percentage of marks obtained in prior examination",
     header_preferableTime:"Your's preferable time of classes",
     header_doj:"Date of Joining"
