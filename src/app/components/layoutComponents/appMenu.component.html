@@ -1,11 +1,13 @@
 <div>
     <div class="AppMenu">
         <div class="content-width pd0">
-        <div class="AppMenuContent">
+        <div   class="AppMenuContent">
                 <ul>
                     <li *ngFor="let _routeConfigData of routeConfigData">
-                   <a routerLink={{_routeConfigData.routeLink}} >  {{_routeConfigData.routeLinkText}}  </a> 
+                            <a routerLink={{_routeConfigData.routeLink}} >  {{_routeConfigData.routeLinkText}}  </a> 
                     </li>
+                    <li>  <a *ngIf="loadAdminMenu" routerLink={{adminRouteLink}} >  Admin  </a>  </li>
+                     
                 </ul>
         </div>
     </div>

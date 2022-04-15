@@ -16,7 +16,8 @@
 
   <div *ngIf="isOnline"> 
   
-    <div class="TextCenter"> <h2> Application Form</h2> </div>
+     
+    <div class="textCenter"> <h2> Application Form</h2> </div>
     <form [formGroup]="aForm" class="form-control col-md-12 formContainer" (ngSubmit)="onFormSubmit()">
 
       <div class="formInfo-div"> 
@@ -77,7 +78,7 @@
         
         <br/> <br/>
          <div style="text-align: center;"> 
-         <button class="btn btn-primary formButton" type="submit" [disabled]="!aForm.valid">Submit</button>
+         <button class="btn btn-primary" type="submit" [disabled]="!aForm.valid">Submit</button>
          </div>
          <br><br>
     </form> 

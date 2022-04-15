@@ -1,0 +1,42 @@
+ 
+
+<!-- ID: <input type="text" > <br/>
+Password: ID: <input type="password" > <br/>
+
+  <button type="button" (click)="GetIn()">Get In</button>  -->
+<div class="textCenter"  style=" padding: 3em;">
+
+
+  <div class="form-control col-md-12 formContainer" style="width: 40%; display: inline-block;" >
+    <h3> Let us know your Identity</h3>
+    
+  <span  class="errorMessage textLeft">{{errorMessage}}</span> 
+        <div class="formControlContainer"> 
+          <br> 
+          <div class="formLabel-div textLeft"> 
+            <label  for="userName" > User Name 
+            </label> 
+            <input   class="formControl-tb-t" id="userName" type="text" #userName /> 
+          </div> 
+
+          <div class="formLabel-div textLeft"> 
+            <label  for="password" > Password 
+            </label> 
+            <input   class="formControl-tb-t" id="password" type="password" #password /> 
+          </div> 
+            
+        </div>  
+      
+      <br/>  
+       <div style="text-align: center; " > 
+       <button class="btn btn-primary" type="button" (click)="GetIn(userName.value,password.value)">GetIn</button>
+       <!-- &nbsp;
+       <button class="btn btn-primary formButton col-md-2" type="button" (click)="RegisterMe()">RegisterMe</button>
+        -->
+      </div>
+       <br> 
+      </div> 
+
+ 
+
+</div>

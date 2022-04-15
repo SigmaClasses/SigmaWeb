@@ -9,8 +9,18 @@
             <img class="AppLogo" src={{appLogoWithText}} alt="logo" />
         </div>
 
-        <div class="AppSignInDiv">
-         <a href="#" > Sign in / Register</a>
+        <div class="AppSignInDiv"  >
+            <span   *ngIf="showLogoutButton; else showLoginContent" >
+
+              {{greetingMessage+' '}} <strong>  {{loginUserDetails?.userName}} </strong>
+              &nbsp;
+              <a  (click)="LogMeOut()"> Logout</a>
+            </span> 
+
+            <ng-template #showLoginContent > 
+                <a routerLink="Login"> Member Login</a>
+            </ng-template>
+        
         </div>
         
     </div>

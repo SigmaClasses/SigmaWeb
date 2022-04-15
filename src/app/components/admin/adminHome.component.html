@@ -1,0 +1,23 @@
+
+<div class="col-md-12 row"> 
+    <div class="col-md-2">
+        <div class="AdminMenu">
+            <div class="content-width pd0">
+            <div   class="AdminMenuContent">
+                    <ul>
+                        <li *ngFor="let _routeConfigData of routeConfigData">
+                            <a routerLink={{_routeConfigData.routeLink}}>  {{_routeConfigData.routeLinkText}}  </a> 
+                    
+                    </li>  
+                    </ul>
+            </div>
+        </div>
+        </div>
+     </div>
+
+     <div class="adminContentContainer col-md-10">
+          
+         <router-outlet></router-outlet>
+     </div>
+
+</div>

@@ -46,7 +46,7 @@ body {
 }
 
 .content-width {
-  width: 90% !important;
+  width: 95% !important;
   margin-left: auto;
   margin-right: auto;
 }
@@ -161,11 +161,18 @@ p {
   font-size: 21px;
 }
 
-.TextCenter {
+.textCenter {
   text-align: center !important;
 }
 
-.TextJustify {
+.textLeft {
+  text-align: left !important;
+}
+
+.textRight {
+  text-align: right !important;
+}
+.textJustify {
   text-align: justify !important;
 }
 
@@ -200,12 +207,18 @@ p {
 }
 
 .AppSignInDiv a {
-  color: var(--appLogoTextColor);
+  cursor: pointer;
+  color: var(--appLogoTextColor) !important;
 }
 
 .AppSignInDiv a:hover {
-  color: var(--appLogoTextColor);
+  cursor: pointer;
+  color: var(--appLogoTextColor) !important;
   text-decoration: underline !important;
+}
+
+.AppSignInDiv span { 
+  color: white;
 }
 
 /* End:  App Header Page Section  */
@@ -426,7 +439,8 @@ input.ng-touched.ng-invalid {
 
 .formContainer {
   background-color: rgb(248, 248, 248) !important;
-  box-shadow: 1px 1px 4px 1px rgb(184, 184, 184);
+  /* box-shadow: 1px 1px 4px 1px rgb(184, 184, 184); */
+  box-shadow: 1px 1px 4px 1px var(--appMenuActiveBGColor) ;
 }
 
 .formControlContainer {
@@ -500,14 +514,74 @@ input.ng-touched.ng-invalid {
   animation-duration: 1s;
 }
 
-.formButton {
+/* .formButton {
   font-size: 1.1rem;
-  padding: 0.5rem 5rem 0.5rem 5rem !important;
+   padding: 0.5em 5em 0.5em 5em !important;  
   background-clip: padding-box;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+} */
+
+.errorMessage{
+  color:red;
 }
+
+
+/* Start:  Admin Menu Section */
+
+.AdminMenu { 
+  background-color: transparent ;
+}
+
+.AdminMenuContent {
+  text-align: center;
+}
+
+.AdminMenuContent ul {
+  list-style: disc;
+  color:  var(--contentHeadingColor);  
+}
+
+.AdminMenuContent ul li {
+  text-align: left; 
+}
+
+.AdminMenuContent ul li a {
+  color:  var(--contentHeadingColor); 
+  display: inline-block;
+  padding: 0.5rem 0rem 0.5rem 0rem;
+  align-items: center;
+    width: 100%;
+  font-size: 1.1rem;
+  font-weight: 200; 
+  border-bottom:1px solid  var(--appMenuActiveBGColor);
+}
+
+.AdminMenuContent ul li a:hover { 
+  font-weight: 500;
+}
+
+.AdminMenuLinkActive { 
+  font-weight: 500;
+}
+
+.StickAdminMenu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-right: auto;
+  z-index: 115003;
+  padding-top: 0rem !important; 
+}
+
+.adminContentContainer{
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem !important;
+  border-left:1px solid  var(--appMenuActiveBGColor); 
+  box-shadow: 1px 1px 4px 1px var(--appMenuActiveBGColor) ;
+}
+
+/* Start:  Admin Menu Section */
 
 /*##################################################################################################################################  */
 
@@ -515,7 +589,7 @@ input.ng-touched.ng-invalid {
 
 @media screen and (min-width: 740px) {
   .content-width {
-    width: 90% !important;
+    width: 95% !important;
   }
 }
 

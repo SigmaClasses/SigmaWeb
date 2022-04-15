@@ -3,7 +3,9 @@ import {QuestionBaseService} from '../../services/questionBase.service';
 import {ApplicationFormQuestions} from '../../shared/appClass/applicationFormQuestions.class'
 
  import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
- import { formControlConfig} from '../../shared/appConstants/shared.constants'
+ import { formControlConfig} from '../../shared/appConstants/shared.constants';
+
+ import { LoginService } from 'src/app/services/login.service';
 
 @Component({
 
@@ -20,7 +22,8 @@ export class AdmissionComponent implements OnInit {
     controlType:any= {};
     havingError=false;
     formPath="assets/files/form.pdf";
-    constructor(private fb:FormBuilder, private _questionBaseService:QuestionBaseService){    
+    constructor(private fb:FormBuilder, private _questionBaseService:QuestionBaseService,
+        private _loginService:LoginService){    
 
         // assigning values to controlType such that we can use it in switch case
         this.controlType.TB = formControlConfig.controlTextBox;
@@ -32,7 +35,7 @@ export class AdmissionComponent implements OnInit {
     }
 
     aForm = this.fb.group({});
-
+    showEditButton=false;
 
     ngOnInit(): void {
 
@@ -46,6 +49,10 @@ export class AdmissionComponent implements OnInit {
             });
             this.aForm.controls['sName'].setValidators(Validators.required);
         }
+
+
+        if(this._loginService.getPrivileges() === "admin")
+            this.showEditButton= true;
 
     }
     //  @ViewChild('formD')
